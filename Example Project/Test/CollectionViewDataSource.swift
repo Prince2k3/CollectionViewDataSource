@@ -3,31 +3,31 @@ import UIKit
 @objc(MSCollectionViewDataSourceDelegate)
 public protocol CollectionViewDataSourceDelegate {
     @objc(dataSource:didConfigureCell:)
-    func didConfigure(cell: CollectionReusableViewDataSource, atIndexPath indexPath: NSIndexPath)
+    func didConfigure(_ cell: CollectionReusableViewDataSource, atIndexPath indexPath: IndexPath)
 }
 
 @objc(MSCollectionReusableViewDataSource)
 public protocol CollectionReusableViewDataSource {
     @objc(configureItemForReusableView:)
-    func configure(item: AnyObject?)
+    func configure(_ item: AnyObject?)
 }
 
 @objc(MSCollectionReusableViewItem)
-public class CollectionReusableViewItem: NSObject {
+open class CollectionReusableViewItem: NSObject {
     var identifier: String?
     var item: AnyObject?
 }
 
 @objc(MSCollectionViewDataSource)
-public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
-    private var reusableViewItems: [CollectionReusableViewItem]?
-    private(set) var cellIdentifier: String?
-    public var headerReusableViewItem: CollectionReusableViewItem?
-    public var footerReusableViewItem: CollectionReusableViewItem?
-    public var items: [AnyObject]?
-    public var title: String?
-    public var delegate: CollectionViewDataSourceDelegate?
-    public var cellMap: [String: String]?
+open class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
+    fileprivate var reusableViewItems: [CollectionReusableViewItem]?
+    fileprivate(set) var cellIdentifier: String?
+    open var headerReusableViewItem: CollectionReusableViewItem?
+    open var footerReusableViewItem: CollectionReusableViewItem?
+    open var items: [AnyObject]?
+    open var title: String?
+    open var delegate: CollectionViewDataSourceDelegate?
+    open var cellMap: [String: String]?
     
     public convenience init(cellMap: [String: String], headerReusableViewItem: CollectionReusableViewItem? = nil, footerReusableViewItem: CollectionReusableViewItem? = nil, items: [AnyObject]? = nil) {
         self.init()
@@ -54,28 +54,28 @@ public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     }
     
     @objc(itemAtIndexPath:)
-    public func item(at indexPath: NSIndexPath) -> AnyObject? {
+    public func item(at indexPath: IndexPath) -> AnyObject? {
         return items?[indexPath.row] ?? nil
     }
     
     @objc(cellIdentifierAtIndexPath:)
-    public func cellIdentifier(at indexPath: NSIndexPath) -> String? {
+    open func cellIdentifier(at indexPath: IndexPath) -> String? {
         
         var identifier: String? = cellIdentifier
         if let cellMap = cellMap, let item = item(at: indexPath) {
-            identifier = cellMap[NSStringFromClass(item.dynamicType)]
+            identifier = cellMap[NSStringFromClass(type(of: item))]
         }
         return identifier
     }
     
     //MARK - UICollectionViewDataSource 
     
-    public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    open func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        if let reusableViewItems = reusableViewItems where reusableViewItems.count > 0 {
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        if let reusableViewItems = reusableViewItems , reusableViewItems.count > 0 {
             return reusableViewItems.count
         }
         
@@ -85,15 +85,15 @@ public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
         return 0
     }
     
-    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    open func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         var identifier: String = ""
         var item: AnyObject?
         
         if let cellMap = cellMap {
             item = self.item(at: indexPath)
-            identifier = cellMap[NSStringFromClass(item!.dynamicType)]!
-        } else if let reusableViewItems = reusableViewItems where reusableViewItems.count > 0 {
-            let reusableViewItem: CollectionReusableViewItem = reusableViewItems[indexPath.row]
+            identifier = cellMap[NSStringFromClass(type(of: item!))]!
+        } else if let reusableViewItems = reusableViewItems , reusableViewItems.count > 0 {
+            let reusableViewItem: CollectionReusableViewItem = reusableViewItems[(indexPath as NSIndexPath).row]
             identifier = reusableViewItem.identifier!
             item = reusableViewItem.item
         } else {
@@ -101,25 +101,25 @@ public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
             identifier = cellIdentifier!
         }
         
-        let cell: CollectionReusableViewDataSource = collectionView.dequeueReusableCellWithReuseIdentifier(identifier, forIndexPath: indexPath) as! CollectionReusableViewDataSource
+        let cell: CollectionReusableViewDataSource = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CollectionReusableViewDataSource
         cell.configure(item)
         delegate?.didConfigure(cell, atIndexPath: indexPath)
         return (cell as? UICollectionViewCell)!
     }
     
-    public func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         var identifier: String = ""
         var item: AnyObject?
         
-        if let headerReusableViewItem = headerReusableViewItem where kind == UICollectionElementKindSectionHeader {
+        if let headerReusableViewItem = headerReusableViewItem , kind == UICollectionElementKindSectionHeader {
             identifier = headerReusableViewItem.identifier!
             item = headerReusableViewItem.item
-        } else if let footerReusableViewItem = footerReusableViewItem where kind == UICollectionElementKindSectionFooter {
+        } else if let footerReusableViewItem = footerReusableViewItem , kind == UICollectionElementKindSectionFooter {
             identifier = footerReusableViewItem.identifier!
             item = footerReusableViewItem.item
         }
         
-        let cell = collectionView.dequeueReusableSupplementaryViewOfKind(kind, withReuseIdentifier: identifier, forIndexPath: indexPath)
+        let cell = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: identifier, for: indexPath)
         
         if cell is CollectionReusableViewDataSource {
             let sourceCell = cell as! CollectionReusableViewDataSource
@@ -132,12 +132,12 @@ public class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
 }
 
 @objc(MSCollectionViewSectionDataSource)
-public class CollectionViewSectionDataSource: NSObject, UICollectionViewDataSource {
+open class CollectionViewSectionDataSource: NSObject, UICollectionViewDataSource {
     
-    public var delegate: CollectionViewDataSourceDelegate?
-    public private(set) var dataSources: [CollectionViewDataSource]?
-    public var headerReusableViewItem: CollectionReusableViewItem?
-    public var footerReusableViewItem: CollectionReusableViewItem?
+    open var delegate: CollectionViewDataSourceDelegate?
+    open fileprivate(set) var dataSources: [CollectionViewDataSource]?
+    open var headerReusableViewItem: CollectionReusableViewItem?
+    open var footerReusableViewItem: CollectionReusableViewItem?
 
     public convenience init(dataSources: [CollectionViewDataSource], headerReusableViewItem: CollectionReusableViewItem? = nil, footerReusableViewItem: CollectionReusableViewItem? = nil) {
         self.init()
@@ -147,32 +147,32 @@ public class CollectionViewSectionDataSource: NSObject, UICollectionViewDataSour
     }
     
     @objc(itemAtIndexPath:)
-    func itemAt(indexPath: NSIndexPath) -> AnyObject? {
+    func itemAt(indexPath: IndexPath) -> AnyObject? {
         let dataSource = dataSources![indexPath.section]
         return dataSource.item(at: indexPath)
     }
     
     @objc(dataSourceAtIndexPath:)
-    func dataSource(at indexPath: NSIndexPath) -> CollectionViewDataSource {
+    func dataSource(at indexPath: IndexPath) -> CollectionViewDataSource {
         return dataSources![indexPath.section]
     }
     
     @objc(titleFromDataSourceAt:)
-    func title(fromDataSourceAt indexPath: NSIndexPath) -> String? {
+    func title(fromDataSourceAt indexPath: IndexPath) -> String? {
         let dataSource = dataSources![indexPath.section]
         return dataSource.title
     }
     
     //MARK: - UICollectionViewDataSource
     
-    public func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    open func numberOfSections(in collectionView: UICollectionView) -> Int {
         if let dataSources = dataSources {
             return dataSources.count
         }
         return 1
     }
     
-    public func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    open func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if let dataSources = dataSources {
             let dataSource = dataSources[section]
             return dataSource.collectionView(collectionView, numberOfItemsInSection: section)
@@ -180,13 +180,13 @@ public class CollectionViewSectionDataSource: NSObject, UICollectionViewDataSour
         return 0
     }
     
-    public func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let dataSource = dataSources![indexPath.section]
-        return dataSource.collectionView(collectionView, cellForItemAtIndexPath: indexPath)
+        return dataSource.collectionView(collectionView, cellForItemAt: indexPath)
     }
     
-    public func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+    public func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: IndexPath) -> UICollectionReusableView {
         let dataSource = dataSources![indexPath.section]
-        return dataSource.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, atIndexPath: indexPath)
+        return dataSource.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
 }

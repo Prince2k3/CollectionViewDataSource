@@ -45,7 +45,7 @@
     }
     
     self.sectionDataSource = [[MSCollectionViewSectionDataSource alloc] initWithDataSources:dataSources headerReusableViewItem:nil footerReusableViewItem:nil];
-    self.sectionDataSource.delegate = self;
+//    self.sectionDataSource.delegate = self;
     
     self.collectionView.dataSource = self.sectionDataSource;
 }
