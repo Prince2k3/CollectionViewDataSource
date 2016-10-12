@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MSCollectionViewDataSource"
-  s.version      = "1.1.0"
+  s.version      = "1.1.1"
   s.summary      = "UICollectionView DataSource Class written in Swift"
 
   # This description is used to generate tags and improve search results.
@@ -62,7 +62,7 @@ Pod::Spec.new do |s|
   #  the deployment target. You can optionally include the target after the platform.
   #
 
-   s.ios.deployment_target = "8.0"
+   s.ios.deployment_target = "9.0"
    #s.platform     = :ios, "10.0"
 
   #  When using multiple platforms
@@ -90,7 +90,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "Sources", "Sources/**/*.{h,m,swift}"
-  s.exclude_files = "Example Project"
+  s.exclude_files = "Example Project Objc", "Example Project Swift"
 
   # s.public_header_files = "Classes/**/*.h"
 
