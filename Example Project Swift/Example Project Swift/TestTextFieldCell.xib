@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TestTextFieldCell" id="hpg-4v-MRY" customClass="TestTextFieldCell" customModule="Example_Project_Swift" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="375" height="224"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You should see what you typed in the Console" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6IA-rp-BNq">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter Text" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQg-AH-5X4">
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Diz-fg-p0u">
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="6IA-rp-BNq" firstAttribute="top" secondItem="uQg-AH-5X4" secondAttribute="bottom" constant="10" id="1MA-1o-8Gy"/>
+                <constraint firstItem="uQg-AH-5X4" firstAttribute="top" secondItem="hpg-4v-MRY" secondAttribute="top" constant="38" id="1uA-Sv-EIw"/>
+                <constraint firstAttribute="bottom" secondItem="6IA-rp-BNq" secondAttribute="bottom" constant="52" id="46U-fz-Khk"/>
+                <constraint firstAttribute="trailing" secondItem="uQg-AH-5X4" secondAttribute="trailing" constant="24" id="8Kd-uG-A3c"/>
+                <constraint firstItem="uQg-AH-5X4" firstAttribute="leading" secondItem="Diz-fg-p0u" secondAttribute="trailing" constant="20" id="8hr-Z2-1Mh"/>
+                <constraint firstItem="6IA-rp-BNq" firstAttribute="leading" secondItem="hpg-4v-MRY" secondAttribute="leading" constant="14" id="biE-Aq-4IM"/>
+                <constraint firstAttribute="trailing" secondItem="6IA-rp-BNq" secondAttribute="trailing" constant="12" id="cn3-JR-7tt"/>
+                <constraint firstItem="uQg-AH-5X4" firstAttribute="centerY" secondItem="Diz-fg-p0u" secondAttribute="centerY" id="eAQ-cO-ZX4"/>
+                <constraint firstItem="Diz-fg-p0u" firstAttribute="leading" secondItem="hpg-4v-MRY" secondAttribute="leading" constant="24" id="hEF-l4-nVX"/>
+            </constraints>
+            <size key="customSize" width="375" height="224"/>
+            <connections>
+                <outlet property="textField" destination="uQg-AH-5X4" id="POF-5s-msX"/>
+            </connections>
+            <point key="canvasLocation" x="555.5" y="528"/>
+        </collectionViewCell>
+    </objects>
+</document>

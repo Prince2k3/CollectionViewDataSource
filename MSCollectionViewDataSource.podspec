@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
   #
 
   s.name         = "MSCollectionViewDataSource"
-  s.version      = "1.0.1"
+  s.version      = "1.1.0"
   s.summary      = "UICollectionView DataSource Class written in Swift"
 
   # This description is used to generate tags and improve search results.

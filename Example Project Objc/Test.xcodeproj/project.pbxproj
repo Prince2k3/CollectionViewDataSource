@@ -34,7 +34,7 @@
 		D1122A8F1D5BAD3B00A229AC /* TestTextFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestTextFieldCell.h; sourceTree = "<group>"; };
 		D1122A901D5BAD3B00A229AC /* TestTextFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestTextFieldCell.m; sourceTree = "<group>"; };
 		D1122A921D5BAD4B00A229AC /* TestTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTextFieldCell.xib; sourceTree = "<group>"; };
-		D1122A941D5BBFA000A229AC /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
+		D1122A941D5BBFA000A229AC /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewDataSource.swift; path = ../../Sources/CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		D1ECB8AE1D5B85FC00A70A6C /* Test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Test.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1ECB8B21D5B85FC00A70A6C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D1ECB8B41D5B85FC00A70A6C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };

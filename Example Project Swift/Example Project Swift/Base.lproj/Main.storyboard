@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="J2l-yP-t6i">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="RAz-HV-b9g">
+            <objects>
+                <tabBarController id="J2l-yP-t6i" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="9Vq-be-dks">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="mdg-3q-sYK" kind="relationship" relationship="viewControllers" id="QD4-Qc-4OV"/>
+                        <segue destination="Dmh-C3-olM" kind="relationship" relationship="viewControllers" id="hdc-zc-EJI"/>
+                        <segue destination="iqn-rd-MBN" kind="relationship" relationship="viewControllers" id="ZTk-GO-TiX"/>
+                        <segue destination="Dc7-yj-mZf" kind="relationship" relationship="viewControllers" id="2ia-mI-TGu"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QAd-9w-DyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="271" y="811"/>
+        </scene>
+        <!--Example 1-->
+        <scene sceneID="uSV-PH-R2w">
+            <objects>
+                <viewController storyboardIdentifier="ViewController" id="mdg-3q-sYK" customClass="ViewController" customModule="Example_Project_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="76B-gb-d2E"/>
+                        <viewControllerLayoutGuide type="bottom" id="M4B-bU-bzO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IAI-6u-CfY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ita-tB-Fc2">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="nb6-De-JbE">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Ita-tB-Fc2" firstAttribute="leading" secondItem="IAI-6u-CfY" secondAttribute="leading" id="Rd8-Jt-AEJ"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="Ita-tB-Fc2" secondAttribute="bottom" constant="49" id="Rr4-hx-lbe"/>
+                            <constraint firstAttribute="trailing" secondItem="Ita-tB-Fc2" secondAttribute="trailing" constant="8" id="bmt-vx-BU4"/>
+                            <constraint firstItem="Ita-tB-Fc2" firstAttribute="top" secondItem="IAI-6u-CfY" secondAttribute="topMargin" constant="20" id="dxv-4y-kMM"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Example 1" id="1id-lp-3Sw"/>
+                    <connections>
+                        <outlet property="collectionView" destination="Ita-tB-Fc2" id="Eeg-qR-X9y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7H8-Na-Q3c" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="-317"/>
+        </scene>
+        <!--Example 4-->
+        <scene sceneID="A4M-Hg-FZg">
+            <objects>
+                <viewController storyboardIdentifier="ViewController4" id="Dc7-yj-mZf" customClass="ViewController4" customModule="Example_Project_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fh6-ZT-x8e"/>
+                        <viewControllerLayoutGuide type="bottom" id="oQ0-hO-VYO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wg2-ZB-TDc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="NNN-4x-GIO">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Xvb-js-8K3">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="NNN-4x-GIO" firstAttribute="leading" secondItem="wg2-ZB-TDc" secondAttribute="leading" id="5cN-uN-ORS"/>
+                            <constraint firstAttribute="trailing" secondItem="NNN-4x-GIO" secondAttribute="trailing" constant="8" id="9pB-sD-ebK"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="NNN-4x-GIO" secondAttribute="bottom" constant="49" id="TXR-qu-A89"/>
+                            <constraint firstItem="NNN-4x-GIO" firstAttribute="top" secondItem="wg2-ZB-TDc" secondAttribute="topMargin" constant="20" id="eEr-lu-LMi"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Example 4" id="UUW-8z-t1i"/>
+                    <connections>
+                        <outlet property="collectionView" destination="NNN-4x-GIO" id="vis-Wn-x3Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="O2Z-kd-G3a" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="1777"/>
+        </scene>
+        <!--Example 3-->
+        <scene sceneID="tYz-eD-SO0">
+            <objects>
+                <viewController storyboardIdentifier="ViewController3" id="iqn-rd-MBN" customClass="ViewController3" customModule="Example_Project_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="W0x-55-lEv"/>
+                        <viewControllerLayoutGuide type="bottom" id="cSG-fU-OMZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kD0-yE-TVN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="96t-0b-DbE">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="KL2-oM-2Ya">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="96t-0b-DbE" secondAttribute="trailing" constant="8" id="CdT-pw-snh"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="96t-0b-DbE" secondAttribute="bottom" constant="49" id="E8i-6C-NbX"/>
+                            <constraint firstItem="96t-0b-DbE" firstAttribute="leading" secondItem="kD0-yE-TVN" secondAttribute="leading" id="T4i-T0-ood"/>
+                            <constraint firstItem="96t-0b-DbE" firstAttribute="top" secondItem="kD0-yE-TVN" secondAttribute="topMargin" constant="20" id="U7o-di-H4w"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Example 3" id="cFc-XT-4uq"/>
+                    <connections>
+                        <outlet property="collectionView" destination="96t-0b-DbE" id="GJD-dN-jAi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZvS-KK-YzS" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="1076"/>
+        </scene>
+        <!--Example 2-->
+        <scene sceneID="3n1-hX-0Sa">
+            <objects>
+                <viewController storyboardIdentifier="ViewController2" id="Dmh-C3-olM" customClass="ViewController2" customModule="Example_Project_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TiJ-mv-Ndh"/>
+                        <viewControllerLayoutGuide type="bottom" id="eZb-ig-9dH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="uOE-6X-4ae">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9xC-hy-a5y">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="DcE-CI-0Gg">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottomMargin" secondItem="9xC-hy-a5y" secondAttribute="bottom" constant="49" id="2Tn-kH-OmH"/>
+                            <constraint firstAttribute="trailing" secondItem="9xC-hy-a5y" secondAttribute="trailing" constant="8" id="FBG-gT-Rm0"/>
+                            <constraint firstItem="9xC-hy-a5y" firstAttribute="top" secondItem="uOE-6X-4ae" secondAttribute="topMargin" constant="20" id="PIM-8F-T4U"/>
+                            <constraint firstItem="9xC-hy-a5y" firstAttribute="leading" secondItem="uOE-6X-4ae" secondAttribute="leading" id="VCu-Cz-xse"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Example 2" id="cHJ-7p-vkT"/>
+                    <connections>
+                        <outlet property="collectionView" destination="9xC-hy-a5y" id="Z8X-1b-BMd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fdk-5f-kNf" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="991" y="380"/>
+        </scene>
+    </scenes>
+</document>
