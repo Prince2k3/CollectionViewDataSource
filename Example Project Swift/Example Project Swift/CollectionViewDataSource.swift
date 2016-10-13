@@ -93,10 +93,14 @@ open class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
             identifier = cellIdentifier!
         }
         
-        let cell: CollectionReusableViewDataSource = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CollectionReusableViewDataSource
-        cell.configure(item)
-        delegate?.didConfigure(cell, at: indexPath)
-        return (cell as? UICollectionViewCell)!
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
+        
+        if let sourceCell = cell as? CollectionReusableViewDataSource {
+            sourceCell.configure(item)
+            delegate?.didConfigure(sourceCell, at: indexPath)
+        }
+        
+        return cell
     }
     
     open func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
