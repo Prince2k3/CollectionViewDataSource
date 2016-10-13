@@ -3,7 +3,7 @@ import UIKit
 @objc(MSCollectionViewDataSourceDelegate)
 public protocol CollectionViewDataSourceDelegate {
     @objc(dataSource:didConfigureCell:)
-    func didConfigure(_ cell: CollectionReusableViewDataSource, atIndexPath indexPath: IndexPath)
+    func didConfigure(_ cell: CollectionReusableViewDataSource, at indexPath: IndexPath)
 }
 
 @objc(MSCollectionReusableViewDataSource)
@@ -103,7 +103,7 @@ open class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
         
         let cell: CollectionReusableViewDataSource = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! CollectionReusableViewDataSource
         cell.configure(item)
-        delegate?.didConfigure(cell, atIndexPath: indexPath)
+        delegate?.didConfigure(cell, at: indexPath)
         return (cell as? UICollectionViewCell)!
     }
     
@@ -124,7 +124,7 @@ open class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
         if cell is CollectionReusableViewDataSource {
             let sourceCell = cell as! CollectionReusableViewDataSource
             sourceCell.configure(item)
-            delegate?.didConfigure(sourceCell, atIndexPath: indexPath)
+            delegate?.didConfigure(sourceCell, at: indexPath)
         }
         
         return cell

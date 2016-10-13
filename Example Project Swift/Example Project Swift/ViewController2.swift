@@ -24,7 +24,7 @@ class ViewController2: UIViewController {
     func build() {
         var items = [CollectionReusableViewItem]()
         for _ in 0..<100 {
-            var cellItem = CollectionReusableViewItem()
+            let cellItem = CollectionReusableViewItem()
             cellItem.identifier = TestCell.identifier
             items.append(cellItem)
         }

@@ -23,7 +23,7 @@ class ViewController4: UIViewController, CollectionViewDataSourceDelegate {
     
     func build() {
         
-        var item = CollectionReusableViewItem()
+        let item = CollectionReusableViewItem()
         item.identifier = TestTextFieldCell.identifier
         
         self.dataSource = CollectionViewDataSource(reusableViewItems: [item])

@@ -11,8 +11,8 @@
 		D1960D761DAEE14B00172893 /* ViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1960D751DAEE14B00172893 /* ViewController3.swift */; };
 		D1960D781DAEE15300172893 /* ViewController4.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1960D771DAEE15300172893 /* ViewController4.swift */; };
 		D1960D7A1DAEE37600172893 /* TestTextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1960D791DAEE37600172893 /* TestTextFieldCell.swift */; };
-		D1960D7E1DAEE9D600172893 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1960D7D1DAEE9D600172893 /* CollectionViewDataSource.swift */; };
 		D1960D801DAEEF6C00172893 /* TestTextFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1960D7F1DAEEF6C00172893 /* TestTextFieldCell.xib */; };
+		D1960D841DAFDA2F00172893 /* CollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1960D831DAFDA2F00172893 /* CollectionViewDataSource.swift */; };
 		D1A1D3E31DAEDDEC00D3340A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A1D3E21DAEDDEC00D3340A /* AppDelegate.swift */; };
 		D1A1D3E51DAEDDEC00D3340A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A1D3E41DAEDDEC00D3340A /* ViewController.swift */; };
 		D1A1D3E71DAEDDEC00D3340A /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1A1D3E61DAEDDEC00D3340A /* ViewController2.swift */; };
@@ -37,8 +37,8 @@
 		D1960D751DAEE14B00172893 /* ViewController3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController3.swift; sourceTree = "<group>"; };
 		D1960D771DAEE15300172893 /* ViewController4.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController4.swift; sourceTree = "<group>"; };
 		D1960D791DAEE37600172893 /* TestTextFieldCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestTextFieldCell.swift; sourceTree = "<group>"; };
-		D1960D7D1DAEE9D600172893 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		D1960D7F1DAEEF6C00172893 /* TestTextFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TestTextFieldCell.xib; sourceTree = "<group>"; };
+		D1960D831DAFDA2F00172893 /* CollectionViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CollectionViewDataSource.swift; path = ../../Sources/CollectionViewDataSource.swift; sourceTree = "<group>"; };
 		D1A1D3DF1DAEDDEC00D3340A /* Example Project Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Example Project Swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D1A1D3E21DAEDDEC00D3340A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D1A1D3E41DAEDDEC00D3340A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		D1A1D4041DAEDE2400D3340A /* CollectionViewDataSource */ = {
 			isa = PBXGroup;
 			children = (
-				D1960D7D1DAEE9D600172893 /* CollectionViewDataSource.swift */,
+				D1960D831DAFDA2F00172893 /* CollectionViewDataSource.swift */,
 			);
 			name = CollectionViewDataSource;
 			sourceTree = "<group>";
@@ -249,7 +249,7 @@
 				D1A1D3E71DAEDDEC00D3340A /* ViewController2.swift in Sources */,
 				D1960D781DAEE15300172893 /* ViewController4.swift in Sources */,
 				D1A1D3E31DAEDDEC00D3340A /* AppDelegate.swift in Sources */,
-				D1960D7E1DAEE9D600172893 /* CollectionViewDataSource.swift in Sources */,
+				D1960D841DAFDA2F00172893 /* CollectionViewDataSource.swift in Sources */,
 				D1960D7A1DAEE37600172893 /* TestTextFieldCell.swift in Sources */,
 				D1960D761DAEE14B00172893 /* ViewController3.swift in Sources */,
 				D1960D731DAEE00D00172893 /* TestCell.swift in Sources */,
