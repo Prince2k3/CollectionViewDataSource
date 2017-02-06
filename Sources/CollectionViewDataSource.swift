@@ -26,7 +26,7 @@ open class CollectionViewDataSource: NSObject, UICollectionViewDataSource {
     open var footerReusableViewItem: CollectionReusableViewItem?
     open var items: [Any]?
     open var title: String?
-    open var delegate: CollectionViewDataSourceDelegate?
+    open weak var delegate: CollectionViewDataSourceDelegate?
     open var cellMap: [String: String]?
     
     public convenience init(cellMap: [String: String], headerReusableViewItem: CollectionReusableViewItem? = nil, footerReusableViewItem: CollectionReusableViewItem? = nil, items: [Any]? = nil) {
