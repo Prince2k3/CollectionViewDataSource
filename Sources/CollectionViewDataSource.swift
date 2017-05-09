@@ -14,8 +14,8 @@ public protocol CollectionReusableViewDataSource {
 
 @objc(MSCollectionReusableViewItem)
 open class CollectionReusableViewItem: NSObject {
-    var identifier: String?
-    var item: Any?
+    open var identifier: String?
+    open var item: Any?
 }
 
 @objc(MSCollectionViewDataSource)
